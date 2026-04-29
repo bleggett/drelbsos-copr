@@ -39,7 +39,7 @@ accurate, has advanced features most rippers don't, yet has no bloat.
 %{_bindir}/%{name}
 
 %changelog
-* Mon Apr 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1-0.1drelbsos
+* Tue Apr 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1-0.1drelbsos
 - Rebuild for FFmpeg 8.x (Fedora 44)
 - Switch to standard meson macros
 
