@@ -67,7 +67,7 @@ make DESTDIR=%{buildroot} udev_install daemon_install python_library_install
 
 %files -n openrazer-daemon
 %{_udevrulesdir}/99-razer.rules
-%{_udevdir}/razer_mount
+%{_prefix}/lib/udev/razer_mount
 %{_bindir}/openrazer-daemon
 %{python3_sitelib}/openrazer_daemon/
 %{python3_sitelib}/openrazer_daemon-*.egg-info/
