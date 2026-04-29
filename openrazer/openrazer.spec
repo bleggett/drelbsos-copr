@@ -8,6 +8,7 @@ URL: https://github.com/openrazer/openrazer
 Source0: https://github.com/openrazer/openrazer/releases/download/v%{version}/openrazer-%{version}.tar.xz
 
 BuildArch: noarch
+BuildRequires: make
 
 Requires: openrazer-daemon
 Requires: python3-openrazer
@@ -78,7 +79,7 @@ make DESTDIR=%{buildroot} udev_install daemon_install python_library_install
 %{python3_sitelib}/openrazer-*.egg-info/
 
 %changelog
-* Mon Apr 28 2026 drelbszoomer <algosystem@gmail.com> - 3.12.2-1
+* Tue Apr 28 2026 drelbszoomer <algosystem@gmail.com> - 3.12.2-1
 - Rebuild for Fedora 44
 - Drop DKMS subpackage; kernel module provided by kmod-openrazer from ublue-os/akmods
 - Remove openrazer-kernel-modules-dkms dependency from openrazer-daemon
