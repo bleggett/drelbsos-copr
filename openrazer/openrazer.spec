@@ -9,6 +9,7 @@ Source0: https://github.com/openrazer/openrazer/releases/download/v%{version}/op
 
 BuildArch: noarch
 BuildRequires: make
+BuildRequires: systemd-rpm-macros
 
 Requires: openrazer-daemon
 Requires: python3-openrazer
