@@ -1,11 +1,15 @@
+%global commit 65afeabc372985050063a7ef4f2c88dd4b011dad
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global commitdate 20260325
+
 Name:           cyanrip
-Version:        0.9.3.1
+Version:        0.9.3.1^%{commitdate}git%{shortcommit}
 Release:        1%{?dist}
 Summary:        Fully featured CD ripping program
 
 License:        LGPLv2.1+
 URL:            https://github.com/cyanreg/cyanrip
-Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz#/%{name}-v%{version}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 
 BuildRequires:  meson
 BuildRequires:  ninja-build
@@ -24,7 +28,7 @@ Fully featured CD ripping program able to take out most of the tedium. Fully
 accurate, has advanced features most rippers don't, yet has no bloat.
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{commit}
 
 %build
 %meson
@@ -39,6 +43,9 @@ accurate, has advanced features most rippers don't, yet has no bloat.
 %{_bindir}/%{name}
 
 %changelog
+* Wed May 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1^20260325git65afeab-1
+- Switch to git master snapshot (commit 65afeab, 2026-03-25)
+
 * Tue Apr 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1-0.1drelbsos
 - Rebuild for FFmpeg 8.x (Fedora 44)
 - Switch to standard meson macros
