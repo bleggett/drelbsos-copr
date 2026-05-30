@@ -22,7 +22,7 @@ ext-image-copy-capture, ext-image-capture-source, and
 single-pixel-buffer-v1. Region capture requires slurp.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-v%{version}
 
 %build
 SHOTMAN_VERSION=%{version} cargo build --release
@@ -48,5 +48,5 @@ install -Dm644 %{name}.fish %{buildroot}%{_datadir}/fish/vendor_completions.d/%{
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
-* Fri May 30 2026 drelbszoomer <algosystem@gmail.com> - 0.5.0-1
+* Sat May 30 2026 drelbszoomer <algosystem@gmail.com> - 0.5.0-1
 - Initial package

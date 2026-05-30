@@ -33,5 +33,5 @@ install -Dm755 target/release/%{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
-* Fri May 30 2026 drelbszoomer <algosystem@gmail.com> - 0.5.0-1
+* Sat May 30 2026 drelbszoomer <algosystem@gmail.com> - 0.5.0-1
 - Initial package

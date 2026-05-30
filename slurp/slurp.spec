@@ -41,5 +41,5 @@ printed to stdout.
 %{_mandir}/man1/%{name}.1*
 
 %changelog
-* Fri May 30 2026 drelbszoomer <algosystem@gmail.com> - 1.5.0-1
+* Sat May 30 2026 drelbszoomer <algosystem@gmail.com> - 1.5.0-1
 - Initial package
