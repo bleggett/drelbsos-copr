@@ -40,7 +40,7 @@ install -Dm644 _%{name} %{buildroot}%{_datadir}/zsh/site-functions/_%{name}
 install -Dm644 %{name}.fish %{buildroot}%{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %files
-%license LICENSE
+%license LICENCE.md
 %doc README.md
 %{_bindir}/%{name}
 %{_datadir}/bash-completion/completions/%{name}
