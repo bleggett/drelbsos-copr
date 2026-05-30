@@ -81,8 +81,10 @@ pip3 install \
     --no-warn-script-location \
     %{_sourcedir}/maestral_qt-1.9.8.tar.gz
 
-# Remove Windows/macOS-only scripts installed by pip
+# Remove binaries we don't want to ship
 rm -f %{buildroot}%{_bindir}/keyring
+rm -f %{buildroot}%{_bindir}/pyro5-*
+rm -f %{buildroot}%{_bindir}/stone
 
 %files
 %license LICENSE.txt
@@ -104,12 +106,14 @@ rm -f %{buildroot}%{_bindir}/keyring
 %{python3_sitelib}/bidict-*.dist-info/
 %dir %{python3_sitelib}/keyrings/
 %{python3_sitelib}/keyrings/__init__.py
+%dir %{python3_sitelib}/keyrings/__pycache__/
+%{python3_sitelib}/keyrings/__pycache__/
 %{python3_sitelib}/keyrings/alt/
 %{python3_sitelib}/keyrings.alt-*.dist-info/
 %{python3_sitelib}/Pyro5/
 %{python3_sitelib}/pyro5-*.dist-info/
 %{python3_sitelib}/serpent*
-%{python3_sitelib}/serpent-*.dist-info/
+%{python3_sitelib}/__pycache__/serpent*
 %{python3_sitelib}/survey/
 %{python3_sitelib}/survey-*.dist-info/
 %{python3_sitearch}/xattr/
