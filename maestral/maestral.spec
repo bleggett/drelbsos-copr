@@ -10,6 +10,7 @@ Source1:        https://files.pythonhosted.org/packages/source/m/maestral-qt/mae
 BuildRequires:  python3-pip
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-wheel
+BuildRequires:  python3-rpm-macros
 
 # Fedora-provided runtime deps
 Requires:       python3-click >= 8.2.0
