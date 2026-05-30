@@ -107,7 +107,7 @@ rm -f %{buildroot}%{_bindir}/keyring
 %{python3_sitelib}/keyrings/alt/
 %{python3_sitelib}/keyrings.alt-*.dist-info/
 %{python3_sitelib}/Pyro5/
-%{python3_sitelib}/Pyro5-*.dist-info/
+%{python3_sitelib}/pyro5-*.dist-info/
 %{python3_sitelib}/serpent*
 %{python3_sitelib}/serpent-*.dist-info/
 %{python3_sitelib}/survey/
