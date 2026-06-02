@@ -23,6 +23,13 @@ Requires:       python3-rich
 Requires:       python3-setuptools
 Requires:       python3-typing-extensions
 Requires:       python3-watchdog >= 2.0.1
+Requires:       python3-ply
+Requires:       python3-dropbox >= 12.0.2
+Requires:       python3-bidict
+Requires:       python3-dbus-fast
+Requires:       python3-keyrings-alt
+Requires:       python3-serpent
+Requires:       python3-xattr
 
 %global debug_package %{nil}
 
@@ -53,17 +60,9 @@ pip3 install \
     --prefix %{_prefix} \
     --no-deps \
     --no-warn-script-location \
-    "dropbox==12.0.2" \
-    "stone==3.3.1" \
-    "ply" \
     "desktop-notifier==6.2.0" \
-    "bidict" \
-    "dbus-fast" \
-    "keyrings.alt" \
     "Pyro5" \
-    "serpent" \
-    "survey" \
-    "xattr"
+    "survey"
 
 # Install maestral itself from source
 pip3 install \
@@ -84,42 +83,20 @@ pip3 install \
 # Remove binaries we don't want to ship
 rm -f %{buildroot}%{_bindir}/keyring
 rm -f %{buildroot}%{_bindir}/pyro5-*
-rm -f %{buildroot}%{_bindir}/stone
 
 %files
 %license LICENSE.txt
 %doc README.md CHANGELOG.md
 %{_bindir}/maestral
-%{_bindir}/xattr
 %{python3_sitelib}/maestral/
 %{python3_sitelib}/maestral-%{version}.dist-info/
 # Bundled non-Fedora deps
-%{python3_sitelib}/dropbox/
-%{python3_sitelib}/dropbox-*.dist-info/
-%{python3_sitelib}/stone/
-%{python3_sitelib}/stone-*.dist-info/
-%{python3_sitelib}/ply/
-%{python3_sitelib}/ply-*.dist-info/
 %{python3_sitelib}/desktop_notifier/
 %{python3_sitelib}/desktop_notifier-*.dist-info/
-%{python3_sitelib}/bidict/
-%{python3_sitelib}/bidict-*.dist-info/
-%dir %{python3_sitelib}/keyrings/
-%{python3_sitelib}/keyrings/__init__.py
-%dir %{python3_sitelib}/keyrings/__pycache__/
-%{python3_sitelib}/keyrings/__pycache__/
-%{python3_sitelib}/keyrings/alt/
-%{python3_sitelib}/keyrings.alt-*.dist-info/
 %{python3_sitelib}/Pyro5/
 %{python3_sitelib}/pyro5-*.dist-info/
-%{python3_sitelib}/serpent*
-%{python3_sitelib}/__pycache__/serpent*
 %{python3_sitelib}/survey/
 %{python3_sitelib}/survey-*.dist-info/
-%{python3_sitearch}/xattr/
-%{python3_sitearch}/xattr-*.dist-info/
-%{python3_sitearch}/dbus_fast/
-%{python3_sitearch}/dbus_fast-*.dist-info/
 %{_datadir}/icons/hicolor/512x512/apps/maestral.png
 
 %files qt
@@ -132,4 +109,4 @@ rm -f %{buildroot}%{_bindir}/stone
 %changelog
 * Sat May 30 2026 drelbszoomer <algosystem@gmail.com> - 1.9.6-1
 - Initial package (maestral 1.9.6, maestral-qt 1.9.8)
-- Bundles non-Fedora deps: dropbox, Pyro5, desktop-notifier, keyrings.alt, survey, xattr, dbus-fast, bidict
+- Bundles non-Fedora deps: Pyro5, desktop-notifier, survey
