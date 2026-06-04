@@ -13,8 +13,8 @@ Source1:        %{url}/releases/download/%{tag}/%{name}-%{tag}.tar.gz.sig
 Source2:        https://emersion.fr/.well-known/openpgpkey/hu/dj3498u4hyyarh35rkjfnghbjxug6b19#/gpgkey-0FDE7BE0E88F5E48.gpg
 
 # Minimal configuration file for headless or buildroot use
-Source100:      config.minimal
-Source101:      sway-portals.conf
+Source100:      https://raw.githubusercontent.com/bleggett/drelbsos-copr/main/sway/config.minimal
+Source101:      https://raw.githubusercontent.com/bleggett/drelbsos-copr/main/sway/sway-portals.conf
 
 BuildRequires:  gcc-c++
 BuildRequires:  gnupg2
