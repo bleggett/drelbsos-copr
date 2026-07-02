@@ -1,5 +1,5 @@
 Name:           woof
-Version:        15.2.0
+Version:        15.3.0
 Release:        1%{?dist}
 Summary:        A continuation of the MBF source port for modern systems
 
@@ -53,6 +53,8 @@ In summary, this project's goal is to fast-forward MBF.EXE from DOS to 21st cent
 %{_mandir}/man6/woof-setup.6*
 
 %changelog
+* Wed Jul 1 2026 drelbszoomer <algosystem@gmail.com> - 15.3.0-1
+
 * Sun Jun 14 2026 drelbszoomer <algosystem@gmail.com> - 15.2.0-1
 - Imported recipe from deudz/woof COPR
 - Track upstream master; migrate to SDL3 and current optional dependencies
