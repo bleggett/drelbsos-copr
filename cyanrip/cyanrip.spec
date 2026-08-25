@@ -1,6 +1,6 @@
-%global commit 65afeabc372985050063a7ef4f2c88dd4b011dad
+%global commit f8ebf48fc0d6926796c785fe2dbd9dec54ac15a5
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20260325
+%global commitdate 20260821
 
 Name:           cyanrip
 Version:        0.9.3.1^%{commitdate}git%{shortcommit}
@@ -43,6 +43,9 @@ accurate, has advanced features most rippers don't, yet has no bloat.
 %{_bindir}/%{name}
 
 %changelog
+* Tue Aug 25 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1^20260821gitf8ebf48-1
+- Update git master snapshot to commit f8ebf48 (2026-08-21)
+
 * Wed May 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1^20260325git65afeab-1
 - Switch to git master snapshot (commit 65afeab, 2026-03-25)
 

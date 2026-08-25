@@ -1,12 +1,18 @@
+%global commit de545c8cc76d12c51afab2d6e4aede9ae594e011
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global commitdate 20260824
+
 Name:           woof
-Version:        15.3.0
+Epoch:          1
+Version:        15.2.0^%{commitdate}git%{shortcommit}
 Release:        1%{?dist}
 Summary:        A continuation of the MBF source port for modern systems
 
 License:        GPL-2.0-or-later
 URL:            https://github.com/fabiangreffrath/woof
-# Tracks upstream's default branch (master) rather than a tagged release.
-Source0:        %{url}/archive/refs/heads/master.tar.gz#/%{name}-master.tar.gz
+# Upstream's master branch self-reports 15.2.0 and has diverged from the
+# woof_15.3.0 release tag, so pin a master snapshot to keep Version honest.
+Source0:        %{url}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc
@@ -31,7 +37,7 @@ To achieve this goal, this source port is less strict regarding its faithfulness
 In summary, this project's goal is to fast-forward MBF.EXE from DOS to 21st century and remove all the stumbling blocks on the way. Furthermore, just as MBF was ahead of its time, this project dedicates itself to early adoption of new modding features such as DEHEXTRA+DSDHacked, UMAPINFO and MBF21.
 
 %prep
-%autosetup -n %{name}-master
+%autosetup -n %{name}-%{commit}
 
 %build
 %cmake -DWITH_DISCORD_RPC=OFF
@@ -53,6 +59,12 @@ In summary, this project's goal is to fast-forward MBF.EXE from DOS to 21st cent
 %{_mandir}/man6/woof-setup.6*
 
 %changelog
+* Tue Aug 25 2026 drelbszoomer <algosystem@gmail.com> - 1:15.2.0^20260824gitde545c8-1
+- Pin master snapshot (commit de545c8, 2026-08-24) instead of the moving branch tarball
+- Version now matches what master self-reports; the woof_15.3.0 tag is on a lineage
+  master does not contain (merge base 48bcf43a)
+- Add Epoch 1 so the corrected Version still upgrades over the earlier 15.3.0-1 build
+
 * Wed Jul 1 2026 drelbszoomer <algosystem@gmail.com> - 15.3.0-1
 
 * Sun Jun 14 2026 drelbszoomer <algosystem@gmail.com> - 15.2.0-1

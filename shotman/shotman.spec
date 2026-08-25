@@ -1,5 +1,5 @@
 Name:           shotman
-Version:        0.5.0
+Version:        0.5.1
 Release:        1%{?dist}
 Summary:        Uncompromising screenshot GUI for Wayland compositors
 
@@ -48,5 +48,8 @@ install -Dm644 %{name}.fish %{buildroot}%{_datadir}/fish/vendor_completions.d/%{
 %{_datadir}/fish/vendor_completions.d/%{name}.fish
 
 %changelog
+* Tue Aug 25 2026 drelbszoomer <algosystem@gmail.com> - 0.5.1-1
+- Update to 0.5.1
+
 * Sat May 30 2026 drelbszoomer <algosystem@gmail.com> - 0.5.0-1
 - Initial package
