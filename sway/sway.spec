@@ -1,6 +1,6 @@
 Name:           sway
 Version:        1.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        i3-compatible window manager for Wayland
 
 %global tag     %{gsub %{version} ~ -}
@@ -15,6 +15,10 @@ Source2:        https://emersion.fr/.well-known/openpgpkey/hu/dj3498u4hyyarh35rk
 # Minimal configuration file for headless or buildroot use
 Source100:      https://raw.githubusercontent.com/bleggett/drelbsos-copr/main/sway/config.minimal
 Source101:      https://raw.githubusercontent.com/bleggett/drelbsos-copr/main/sway/sway-portals.conf
+
+# Lets a named sandboxed app id bind specific privileged globals. Ex: Flatpak apps can see
+# zxdg_output_manager_v1, which sway normally filters out of sandboxed Wayland socket access.
+Patch0:         0001-Add-security-context-allow.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  gnupg2
@@ -120,7 +124,7 @@ Wallpaper collection provided with Sway
 
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
-%autosetup -N -n %{name}-%{tag}
+%autosetup -p1 -n %{name}-%{tag}
 
 %build
 %meson \
@@ -169,5 +173,8 @@ install -d -m755 -pv %{buildroot}%{_sysconfdir}/sway/config.d
 %{_datadir}/backgrounds/sway
 
 %changelog
+* Tue Aug 25 2026 drelbszoomer <algosystem@gmail.com> - 1.12-2
+- Add --security-context-allow patch
+
 * Thu Jun 04 2026 drelbszoomer <algosystem@gmail.com> - 1.12-1
 - Update to 1.12 for F44
