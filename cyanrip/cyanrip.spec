@@ -41,12 +41,14 @@ accurate, has advanced features most rippers don't, yet has no bloat.
 %license LICENSE.md
 %doc README.md Changelog.md
 %{_bindir}/%{name}
+%{_datadir}/metainfo/com.github.cyanreg.cyanrip.metainfo.xml
 
 %changelog
 * Tue Aug 25 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1^20260821gitf8ebf48-1
 - Update git master snapshot to commit f8ebf48 (2026-08-21)
+- Package the metainfo file upstream now installs
 
-* Wed May 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1^20260325git65afeab-1
+* Thu May 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1^20260325git65afeab-1
 - Switch to git master snapshot (commit 65afeab, 2026-03-25)
 
 * Tue Apr 28 2026 drelbszoomer <algosystem@gmail.com> - 0.9.3.1-0.1drelbsos
