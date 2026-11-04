@@ -1,10 +1,10 @@
-%global commit de545c8cc76d12c51afab2d6e4aede9ae594e011
+%global commit 4553f9a739d8979a69907c9dab384678902522fa
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20260824
+%global commitdate 20260908
 
 Name:           woof
 Epoch:          1
-Version:        15.2.0^%{commitdate}git%{shortcommit}
+Version:        16.0.0^%{commitdate}git%{shortcommit}
 Release:        1%{?dist}
 Summary:        A continuation of the MBF source port for modern systems
 

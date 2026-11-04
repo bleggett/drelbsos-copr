@@ -1,6 +1,6 @@
-%global commit f8ebf48fc0d6926796c785fe2dbd9dec54ac15a5
+%global commit 648b1dddd265cfd2bb69483a826eb5a5c7e7079e
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20260821
+%global commitdate 20261027
 
 Name:           cyanrip
 Version:        0.9.3.1^%{commitdate}git%{shortcommit}
